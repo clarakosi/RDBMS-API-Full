@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const knex = require('./database/db');
+const cors = require('cors');
 
 const server = express();
 server.use(bodyParser.json());
+server.use(cors());
 
 server.post('/users', (req, res) => {
 	const { name } = req.body;
